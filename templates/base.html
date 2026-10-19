@@ -1,0 +1,7 @@
+<!doctype html><html lang="az"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}A PARFUME{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="layout"><aside class="sidebar"><a class="brand" href="{{ url_for('index') }}"><span class="logo">A</span><span><b>A PARFUME</b><small>PERFUME BUSINESS</small></span></a>
+<nav><a href="{{ url_for('index') }}">▦ <span>İcmal</span></a><a href="{{ url_for('products') }}">◇ <span>Məhsullar</span></a><a href="{{ url_for('orders') }}">↗ <span>Sifarişlər / Satış</span></a><a href="{{ url_for('reports') }}">▤ <span>Hesabatlar</span></a></nav><div class="sidebar-foot">Ətir biznesinin idarəetmə sistemi</div></aside>
+<main class="main"><header><div><div class="eyebrow">A PARFUME / İDARƏETMƏ</div><h1>{% block heading %}İcmal{% endblock %}</h1></div><div class="active"><i></i> Sistem aktivdir</div></header>
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="messages">{% for category,message in messages %}<div class="notice {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+{% block content %}{% endblock %}<footer>A PARFUME · Satış, stok və sifariş idarəetməsi</footer></main></div></body></html>
