@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Parfume — Ətir dünyası</title>
+<meta name="description" content="A Parfume — seçilmiş kişi, qadın və uniseks ətirləri. WhatsApp ilə sifariş et.">
+<style>
+:root{--bg:#0b0b0b;--panel:#151515;--gold:#d4af37;--gold2:#f0d878;--text:#f6f2e8;--muted:#b9b3a4;--line:#383326}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+header{position:sticky;top:0;z-index:10;background:#0b0b0eeF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{max-width:1150px;margin:auto;padding:16px 20px;display:flex;align-items:center;gap:20px;justify-content:space-between}
+.logo{font-size:22px;font-weight:800;letter-spacing:2px;color:var(--gold)}.logo span{color:#fff}
+.navlinks{display:flex;gap:18px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--gold)}
+.cartbtn,.btn{border:1px solid var(--gold);background:var(--gold);color:#111;padding:11px 15px;border-radius:8px;font-weight:700;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--gold)}.btn.small{padding:7px 10px;font-size:13px}
+.hero{max-width:1150px;margin:auto;padding:66px 20px 52px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px}
+.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:700}
+h1{font-size:clamp(38px,6vw,70px);line-height:1.02;margin:16px 0}.hero p{color:var(--muted);font-size:17px;line-height:1.7;max-width:570px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-art{min-height:340px;border:1px solid #55461d;border-radius:24px;background:radial-gradient(ellipse at 50% 35%,#5d4814 0,#211b0b 30%,#121212 70%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bottle{width:150px;height:210px;border:2px solid #c7a33b;border-radius:22px 22px 30px 30px;background:linear-gradient(90deg,#201a0a,#b18b23 42%,#3b2b09 75%,#15120a);box-shadow:0 25px 65px #000;position:relative;transform:rotate(-4deg)}
+.bottle:before{content:"";position:absolute;width:60px;height:35px;left:43px;top:-36px;background:linear-gradient(90deg,#6c5111,#e3c75c,#715315);border-radius:7px 7px 2px 2px}
+.bottle:after{content:"A\\A PARFUME";white-space:pre;position:absolute;left:0;right:0;top:75px;text-align:center;color:#f5d96b;font-size:16px;line-height:1.7;font-weight:800;letter-spacing:2px}
+.art-label{position:absolute;bottom:22px;color:#e6d39a;letter-spacing:5px;font-size:11px}
+.section{max-width:1150px;margin:auto;padding:28px 20px 55px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}
+h2{font-size:30px;margin:0}.sub{color:var(--muted);margin-top:8px;font-size:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.controls input,.controls select,.field{background:#141414;border:1px solid #3a3425;color:var(--text);border-radius:8px;padding:12px;outline:none}.controls input{flex:1;min-width:190px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid #29251b;border-radius:14px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#8d742a}
+.product-image{height:190px;background:radial-gradient(circle at 50% 40%,#3e3211,#17150e 60%,#111);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:50px}
+.product-image img{width:100%;height:100%;object-fit:cover}.product-body{padding:15px}.category{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:1.4px}.product-body h3{margin:8px 0;font-size:17px}.desc{color:var(--muted);font-size:13px;min-height:34px;line-height:1.4}.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px}.price{font-size:18px;color:var(--gold2);font-weight:800}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info{padding:20px;border:1px solid var(--line);border-radius:12px;background:#111}.info strong{display:block;color:var(--gold);margin-bottom:8px}.info p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+footer{border-top:1px solid var(--line);padding:28px 20px;color:var(--muted);text-align:center;font-size:13px}
+.overlay{display:none;position:fixed;inset:0;background:#000b;z-index:20;justify-content:flex-end}.overlay.open{display:flex}.drawer{width:min(460px,100%);height:100%;overflow:auto;background:#111;padding:22px;border-left:1px solid var(--line)}
+.drawerhead{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#fff;font-size:28px;cursor:pointer}.cartline{display:flex;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #333}.cartline small{display:block;color:var(--muted);margin-top:5px}.qty{display:flex;align-items:center;gap:8px}.qty button{background:#292313;color:var(--gold);border:1px solid var(--line);border-radius:5px;cursor:pointer}
+.total{display:flex;justify-content:space-between;font-size:20px;font-weight:800;padding:18px 0;color:var(--gold)}
+.formgrid{display:grid;gap:10px;margin:15px 0}.field{width:100%}textarea.field{min-height:75px}
+.admin{display:none;border:1px solid var(--line);border-radius:12px;padding:18px;background:#111;margin-top:20px}.admin.open{display:block}.admin h3{margin-top:0}.adminrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.notice{color:var(--muted);font-size:12px;line-height:1.5;margin-top:12px}
+.empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed #514526;border-radius:12px;grid-column:1/-1}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:42px}.hero-art{min-height:270px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:10px}.product-image{height:145px}.product-body{padding:11px}.product-body h3{font-size:15px}.price{font-size:16px}.btn{padding:10px 11px}.info-grid{grid-template-columns:1fr}.sectionhead{display:block}}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+<a class="logo" href="#"><span>A</span> PARFUME</a>
+<div class="navlinks"><a href="#products">Məhsullar</a><a href="#about">Haqqımızda</a><a href="#contact">Əlaqə</a></div>
+<button class="cartbtn" onclick="openCart()">Səbət (<span id="cartCount">0</span>)</button>
+</nav></header>
+<main>
+<section class="hero">
+<div><div class="eyebrow">Zövqünü kəşf et</div><h1>Ətirinlə<br><span style="color:var(--gold)">fərqini yarat.</span></h1>
+<p>A Parfume dünyasına xoş gəlmisən. Zövqünə uyğun ətiri seç, səbətinə əlavə et və sifarişini WhatsApp-la bizə göndər.</p>
+<div class="hero-actions"><a class="btn" href="#products">Ətirlərə bax</a><button class="btn secondary" onclick="openCart()">Səbətə keç</button></div></div>
+<div class="hero-art" aria-label="A Parfume qızılı ətir dizaynı"><div class="bottle"></div><div class="art-label">LUXURY • YOUR SIGNATURE</div></div>
+</section>
+<section class="section" id="products">
+<div class="sectionhead"><div><div class="eyebrow">Kolleksiyamız</div><h2>Seçilmiş ətirlər</h2><div class="sub">Məhsulu seç, səbətə əlavə et, sifarişini göndər.</div></div></div>
+<div class="controls"><input id="search" placeholder="Ətir axtar..." oninput="renderProducts()"><select id="category" onchange="renderProducts()"><option value="Hamısı">Bütün kateqoriyalar</option><option>Kişi</option><option>Qadın</option><option>Uniseks</option></select></div>
+<div id="productsGrid" class="grid"></div>
+<div class="admin" id="adminPanel">
+<h3>Admin paneli — məhsul əlavə et</h3>
+<p class="notice">Bu başlanğıc versiyada dəyişikliklər yalnız bu brauzerdə saxlanılır. Hamıya görünən təhlükəsiz idarəetmə paneli üçün sonradan server və giriş sistemi qoşulmalıdır.</p>
+<div class="formgrid">
+<input class="field" id="pName" placeholder="Məhsulun adı">
+<div class="adminrow"><input class="field" id="pPrice" type="number" min="0" step="0.01" placeholder="Qiymət (AZN)"><select class="field" id="pCategory"><option>Kişi</option><option>Qadın</option><option>Uniseks</option></select></div>
+<input class="field" id="pVolume" placeholder="Həcm (məs. 100 ml)">
+<input class="field" id="pImage" placeholder="Şəkil linki (istəyə görə)">
+<textarea class="field" id="pDesc" placeholder="Qısa təsvir"></textarea>
+<button class="btn" onclick="addProduct()">Məhsulu əlavə et</button>
+</div></div>
+<div style="text-align:center;margin-top:24px"><button class="btn secondary small" onclick="toggleAdmin()">Admin panelini aç / bağla</button></div>
+</section>
+<section class="section" id="about"><div class="sectionhead"><div><div class="eyebrow">A Parfume</div><h2>Niyə bizi seçirlər?</h2></div></div>
+<div class="info-grid"><div class="info"><strong>Seçilmiş kolleksiya</strong><p>Zövqünə uyğun kişi, qadın və uniseks ətirlərini bir yerdə kəşf et.</p></div><div class="info"><strong>Rahat sifariş</strong><p>Səbətini hazırla və sifariş məlumatlarını WhatsApp vasitəsilə göndər.</p></div><div class="info"><strong>Şəxsi xidmət</strong><p>Məhsul və çatdırılma barədə sualların üçün bizimlə əlaqə saxla.</p></div></div>
+</section>
+<section class="section" id="contact"><div class="sectionhead"><div><div class="eyebrow">Əlaqə</div><h2>Sifariş üçün hazırıq</h2><div class="sub">WhatsApp nömrəsini aşağıdakı təlimata uyğun dəyiş.</div></div></div><button class="btn" onclick="contactWhatsApp()">WhatsApp ilə əlaqə</button><p class="notice">Qeyd: WhatsApp nömrəsini kodun içindəki WHATSAPP_NUMBER dəyərində öz nömrənlə əvəz et. Ölkə kodu ilə yaz, “+” işarəsi qoyma.</p></section>
+</main>
+<footer>© <span id="year"></span> A Parfume. Bütün hüquqlar qorunur.</footer>
+<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()"><aside class="drawer">
+<div class="drawerhead"><h2>Səbətim</h2><button class="close" onclick="closeCart()">×</button></div>
+<div id="cartItems"></div><div class="total"><span>Cəmi</span><span id="cartTotal">0.00 AZN</span></div>
+<h3>Sifariş məlumatları</h3><div class="formgrid"><input class="field" id="customerName" placeholder="Ad və soyad"><input class="field" id="customerPhone" placeholder="Telefon nömrəsi"><textarea class="field" id="customerAddress" placeholder="Çatdırılma ünvanı / qeyd"></textarea><button class="btn" onclick="checkoutWhatsApp()">WhatsApp-la sifariş et</button></div>
+<p class="notice">Sifariş göndərilməzdən əvvəl WhatsApp açılacaq və məlumatları yoxlaya biləcəksən.</p>
+</aside></div>
+<script>
+const WHATSAPP_NUMBER = "994XXXXXXXXX"; // Buraya öz WhatsApp nömrəni yaz: məsələn 994501234567
+const defaultProducts = [
+{id:1,name:"Noir Essence",category:"Kişi",volume:"100 ml",price:45,desc:"Dərin, isti və zərif xarakterli ətir.",image:""},
+{id:2,name:"Golden Bloom",category:"Qadın",volume:"50 ml",price:35,desc:"Zərif, çiçəkli və yaddaqalan notlar.",image:""},
+{id:3,name:"Oud Royale",category:"Uniseks",volume:"100 ml",price:50,desc:"Oud və ağac notları ilə seçilən ətir.",image:""},
+{id:4,name:"Velvet Musk",category:"Uniseks",volume:"50 ml",price:29,desc:"Gündəlik istifadə üçün yumşaq və təmiz qoxu.",image:""}
+];
+let products = JSON.parse(localStorage.getItem("aparfume_products") || "null") || defaultProducts;
+let cart = JSON.parse(sessionStorage.getItem("aparfume_cart") || "{}");
+function saveProducts(){localStorage.setItem("aparfume_products",JSON.stringify(products))}
+function saveCart(){sessionStorage.setItem("aparfume_cart",JSON.stringify(cart))}
+function money(n){return Number(n).toFixed(2)+" AZN"}
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase().trim(),cat=document.getElementById("category").value;
+ const list=products.filter(p=>(cat==="Hamısı"||p.category===cat)&&(`${p.name} ${p.desc} ${p.category}`.toLowerCase().includes(q)));
+ const grid=document.getElementById("productsGrid");
+ if(!list.length){grid.innerHTML='<div class="empty">Axtarışa uyğun məhsul tapılmadı.</div>';return}
+ grid.innerHTML=list.map(p=>`<article class="card"><div class="product-image">${p.image?`<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}">`:"✦"}</div><div class="product-body"><div class="category">${escapeHtml(p.category)} • ${escapeHtml(p.volume||"")}</div><h3>${escapeHtml(p.name)}</h3><div class="desc">${escapeHtml(p.desc||"")}</div><div class="price-row"><span class="price">${money(p.price)}</span><button class="btn small" onclick="addToCart(${p.id})">Əlavə et</button></div></div></article>`).join("");
+}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function escapeAttr(s){return escapeHtml(s)}
+function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();renderCart();document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];saveCart();renderCart();document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function renderCart(){
+ const box=document.getElementById("cartItems");let total=0;
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);
+ if(!entries.length)box.innerHTML='<div class="empty">Səbət hələ boşdur.</div>';
+ else box.innerHTML=entries.map(([id,qty])=>{const p=products.find(x=>x.id===Number(id));if(!p)return "";total+=p.price*qty;return `<div class="cartline"><div><strong>${escapeHtml(p.name)}</strong><small>${money(p.price)} × ${qty}</small></div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>`}).join("");
+ document.getElementById("cartTotal").textContent=money(total);
+}
+function openCart(){document.getElementById("cartOverlay").classList.add("open");renderCart()}
+function closeCart(){document.getElementById("cartOverlay").classList.remove("open")}
+function waOpen(text){
+ if(WHATSAPP_NUMBER.includes("X")){alert("Əvvəlcə sayt faylında WHATSAPP_NUMBER sətrinə öz WhatsApp nömrəni yaz (994 ilə başlasın).");return}
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(text),"_blank","noopener");
+}
+function checkoutWhatsApp(){
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);if(!entries.length){alert("Səbət boşdur.");return}
+ const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim();
+ if(!name||!phone){alert("Zəhmət olmasa adınızı və telefon nömrənizi yazın.");return}
+ let total=0,lines=entries.map(([id,qty])=>{const p=products.find(x=>x.id===Number(id));if(!p)return "";total+=p.price*qty;return `• ${p.name} (${p.volume||""}) — ${qty} x ${money(p.price)}`}).filter(Boolean);
+ const msg=`A PARFUME — YENİ SİFARİŞ%0A`.replace("%0A","\n")+`\nMüştəri: ${name}\nTelefon: ${phone}\nÜnvan/Qeyd: ${address||"Qeyd yoxdur"}\n\nMəhsullar:\n${lines.join("\n")}\n\nYEKUN: ${money(total)}`;
+ waOpen(msg);
+}
+function contactWhatsApp(){waOpen("Salam! A Parfume mağazası ilə bağlı məlumat almaq istəyirəm.")}
+function toggleAdmin(){document.getElementById("adminPanel").classList.toggle("open")}
+function addProduct(){
+ const name=document.getElementById("pName").value.trim(),price=Number(document.getElementById("pPrice").value),category=document.getElementById("pCategory").value,volume=document.getElementById("pVolume").value.trim(),image=document.getElementById("pImage").value.trim(),desc=document.getElementById("pDesc").value.trim();
+ if(!name||!Number.isFinite(price)||price<=0){alert("Məhsul adı və düzgün qiymət yaz.");return}
+ products.push({id:Date.now(),name,price,category,volume,desc,image});saveProducts();renderProducts();
+ ["pName","pPrice","pVolume","pImage","pDesc"].forEach(id=>document.getElementById(id).value="");
+ alert("Məhsul bu brauzerdə əlavə olundu.");
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();renderCart();document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+</script>
+</body>
+</html>
